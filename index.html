@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<style>
+    /* Add styling for the moving meme image */
+    #clouds {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.5s ease-in-out;
+    }
+</style>
+<body>
+    <header>
+    <h1>
+        A tech talks to his son.
+    </h1>
+    </header>
+    <!-- Start and Stop buttons -->
+    <button onclick="startMoving()">Start</button>
+    <button onclick="stopMoving()">Stop</button>
+    <img id="clouds" src="Z:\Dads_School_Work\CSC102\1.2_The_Foundation\clouds.jpg" > 
+    <nav>
+        <h2>
+        <a href="./index.html">Home</a><br>
+        <a href="./boards.html">Boards</a><br>
+        </h2>
+    </nav>    
+    <footer>
+        Richard Parrott<br>
+        University of Advancing Technology<br>
+        2625 W Baseline Rd<br>
+        Tempe, Arizona 85283<br>
+    </footer>
+    <script>
+        let intervalID;
+        // Function to start moving the meme image
+        function startMoving() {
+            const clouds = document.getElementById('clouds');
+            // Move the meme image to a new position
+            clouds.style.transform = `translate(${Math.random() * 50}px, ${Math.random() * 50}px)`;
+            // Repeat the movement every 1 second (adjust as needed)
+            intervalID = setInterval(() => {
+                clouds.style.transform = `translate(${Math.random() * 50}px, ${Math.random() * 50}px)`;
+            }, 1000);
+        }
+
+        // Function to stop moving the meme image
+        function stopMoving() {
+            const clouds = document.getElementById('clouds');
+            // Clear the interval to stop the movement
+            clearInterval(intervalID);
+            // You can also reset the position or add any other actions as needed
+            clouds.style.transform = `translate(0, 0)`;
+        }
+    </script>
+</body>
+</html>

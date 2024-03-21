@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+   <script>
+    function isPalindrome(str) {
+    // Remove spaces and convert to lowercase for accurate comparison
+    str = str.replace(\s/g, '').toLowerCase();
+    
+    // Reverse the string
+    var reversedStr = str.split('').reverse().join('');
+    
+    // Check if the original string is equal to the reversed string
+    return str === reversedStr;
+}
+
+// looping for multiple inputs
+while (true) {
+    // Prompt the user to enter a string
+    var userInput = prompt("Enter a string:");
+    
+    // Check if the user wants to exit
+    if (userInput === null) {
+        alert("Exiting palindrome checker. Goodbye!");
+        break; // Exit the loop
+    }
+    
+    // Check if the entered string is a palindrome
+    if (isPalindrome(userInput)) {
+        alert("Yes, '" + userInput + "' is a palindrome.");
+    } else {
+        alert("No, '" + userInput + "' is not a palindrome.");
+    }
+}
+   </script> 
+</body>
+</html>
